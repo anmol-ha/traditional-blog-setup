@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Edit</title>
+    <link rel="stylesheet" href="../public/stylesheet.css">
+    <link rel="stylesheet" href="/style/stylesheet.css">
+</head>
+<body>
+    <div class="editPage-container">
+        <% if (locals.blog) { %>
+            <div>
+                <p>Edit your blog</p>
+            </div>
+            <div>
+                <form id="editForm" method="post" action="/edited-post/<%=blog.id%>">
+                    
+                    <input type="text" name="title" value="<%=blog.title%>" placeholder="<%=blog.title%>">
+                    <textarea name="content" rows="10"><%=blog.content%></textarea>
+                    <input type="text" name="author" value="<%=blog.author %>">                
+                    <button class="submitEdit-btn" type="submit">
+                        Edit blog
+                    </button>
+                    
+                </form>
+            </div>
+        <% } else { %>
+            <div>
+                <p>Post a new blog</p>
+            </div>
+            <div>
+                <form id="editForm" method="post" action="/new-post">
+                    
+                    <input type="text" name="title" placeholder="Title" required>
+                    <textarea name="content" rows="10" placeholder="Content" required></textarea>
+                    <input type="text" name="author" placeholder="Author" required>                
+                    <button class="submitEdit-btn" type="submit">
+                        Post blog
+                    </button>    
+                </form>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

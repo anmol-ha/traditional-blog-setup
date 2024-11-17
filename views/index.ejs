@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="../public/style/stylesheet.css">
+    <link rel="stylesheet" href="/style/stylesheet.css">
+</head>
+<body>
+    <div class="web-container">
+        <div class="head-container web-item">
+            <div class="blog-title-div">
+                <a href="/"><img src="https://pbs.twimg.com/media/GHXgz0fWoAA-cWw.jpg"></a>
+                <p class="heading">
+                    <a href="/" style="color: burlywood; text-decoration: none;">My Blog</a></h2>
+                </p>
+                <p class="subheading">
+                    a blog of simple things
+                </p>
+            </div>
+            <% if (blogs.length > 1) { %>
+                <div class="blogs-list-div">
+                    <ul style="list-style: none;">
+                        <a href="/new" style="text-decoration: none;"><li class="new-post">Make a new post</li></a>
+                        <li style="font-size: 1.6rem;">Recent Posts</li>
+                    <% for (var i = blogs.length - 1; i >= 0; i--) { %>
+                        <a href="/posts/<%= blogs[i].id %>" >
+                        <li>
+                            <%= blogs[i].title %>
+                        </li>
+                        </a>
+                    <% } %>
+                    </ul>
+                </div>
+            <% } %>         
+        </div>
+        <div class="body-container web-item">
+            <% for (var i = blogs.length - 1; i >= 0; i--) { %>
+                <div class="blog-item">
+                    <div class="blog-title">
+                        <a href="/posts/<%= blogs[i].id %>" >
+                        <%= blogs[i].title %>
+                        </a>
+                    </div>
+                    <div class="byline-panel">
+                        <div class="date">
+                            <span>📅 <%= blogs[i].date %></span>
+                        </div>
+                        <div class="author-name">
+                            <span>✍️ <%= blogs[i].author %></span>
+                        </div>
+                        <div class="edit-btn">
+                            <span>🖋️ <a class="edit-link" href="/edit/<%= blogs[i].id %>" >Edit</a></span>
+                        </div>
+                        <div class="del-btn">
+                            <span><button class="del-btn">🗑️ <a class="del-link" href="/delete/<%=blogs[i].id %>">Delete</a></button></span>
+                        </div>
+                    </div>
+                    <div class="content-block">
+                        <p><%= blogs[i].content %></p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

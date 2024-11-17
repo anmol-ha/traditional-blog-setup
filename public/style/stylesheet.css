@@ -1,0 +1,208 @@
+body {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Homepage Style */
+
+/* Style for the two web elements in the flex container i.e. the head with the blog title and blogs list and the body with the blog content. */
+.web-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+}
+.web-container > .web-item {
+    margin: 40px;
+    padding: 0px;
+}
+/* Style for the head item which is a flex container with two items i.e. the title & image div and the blogs list div */
+.head-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    justify-items: center;
+}
+.blog-title-div {
+    width: 300px;
+    height: auto;
+    background-color: rgb(114, 16, 16);
+    color: white;
+    padding-bottom: 20px;
+}
+.blog-title-div img {
+    width: 100%;
+    height: auto;
+}
+.blog-title-div p {
+    text-align: center;
+}
+.heading {
+    margin: 10px;
+    padding: 0px;
+    font-size: 2.75rem;
+    color: burlywood;
+    font-family: 'Times New Roman', Times, serif;
+}
+.subheading {
+    font-size: 0.9rem;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.blogs-list-div {
+    width: 300px;
+    height: auto;
+    background-color: rgb(226, 175, 107);
+    margin-top: 30px;
+    color: black;
+}
+ul {
+    padding: 10px;
+    margin: 0px;
+}
+li {
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+    font-size: 1.12rem;
+}
+.new-post {
+    font-size: 1.4rem;
+    border: 1.5px solid black;
+    padding: 1px;
+    text-align: center;
+    background-color: rgb(114, 16, 16);
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Style for the body item which is also a flex container with each individual blog div as a flex item. */
+.body-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    width: 800px;
+    height: auto;
+}
+.blog-item {
+    background-color: burlywood;
+    color: black;
+    padding: 0px 50px;
+    margin-bottom: 60px;
+}
+.blog-title {
+    margin: 20px 0px;
+    font-size: 2rem;
+}
+.blog-title a {
+    text-decoration: none;
+}
+.byline-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.byline-panel span {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+.del-btn {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.content-block {
+    font-size: 1.25rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 30px 0px;
+    border: 3px solid black;
+    padding: 20px;
+}
+a {
+    color: inherit;
+}
+
+
+img:hover {
+    opacity: 0.9;
+}
+a:hover {
+    opacity: 0.9;
+}
+
+/* Style change for smaller screens for a responsive web design */
+@media (max-width: 600px) {
+    .web-container {
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: center;
+    }
+    
+    .blog-title-div {
+        width: 100%;
+    }
+    .blogs-list-div {
+        width: 100%;
+    }
+    .body-container {
+        width: auto;
+    }
+    .blog-item {
+        width: 100%;
+    }
+}
+
+/* Edit Page Style */
+
+.editPage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.editPage-container p {
+    color: white;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    align-items: baseline;
+}
+#editForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#editForm > label {
+    color: white;
+}
+#editForm > * {
+    margin: 10px;
+    padding: 10px;
+    width: 750px;
+    background-color: burlywood;
+    box-shadow: none;
+    border: none;
+    font-size: 1.15rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+textarea {
+    height: 400px;
+}
+.submitEdit-btn {
+    background-color: rgb(114, 16, 16) !important;
+    color: white;
+}
+.submitEdit-btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
